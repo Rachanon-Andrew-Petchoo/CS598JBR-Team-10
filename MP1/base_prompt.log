@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/cindycheng/Documents/GitHub/CS598JBR-Team-10/MP1/model_prompting.py", line 1, in <module>
+    import jsonlines
+ModuleNotFoundError: No module named 'jsonlines'
