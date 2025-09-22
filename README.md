@@ -1,12 +1,12 @@
-# CS598JBR-Team-0
+# CS598JBR-Team-10
 
 ## Group members
-- [Team member1], [NetID]
-- [Team member2], [NetID]
-- [Team member3], [NetID]
-- [Team member4], [NetID]
+- Rachanon Petchoo, petchoo2
+- Supawit Sutthiboriban, supawit3
+- Yu-Chien Lin, yuchien4
+- Yu-Ting Cheng, ytcheng4
 
 ## Link of Google Colab Notebook
-- MP1 - [link](URL) (please add the link here)
+- MP1 - [link](https://colab.research.google.com/drive/1bAk5WeeVVtTLhtL0Io4I7OFVxbniCs3j)
 - MP2 - [link](URL) (please add the link here)
 - MP3 - [link](URL) (please add the link here)
