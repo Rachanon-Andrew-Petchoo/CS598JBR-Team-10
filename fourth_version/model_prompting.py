@@ -130,7 +130,9 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
             if line.strip():  # Non-empty line
                 # Count existing indentation
                 leading_spaces = len(line) - len(line.lstrip())
-                if leading_spaces < 4:
+                if leading_spaces == 0:
+                    continue
+                elif leading_spaces < 4:
                     # Minimum indentation is 4 spaces for function body
                     line = '    ' + line.lstrip()
                 else:
