@@ -64,8 +64,6 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
         if "instruct" in model_name.lower():
             user_msg = (
                 "Complete the Python function by writing ONLY the function body. "
-                "Do not include the 'def' line or any markdown fences. "
-                "Indent each non-empty line with 4 spaces. "
                 "Here is the prompt:\n\n" + raw_prompt
             )
             if hasattr(tokenizer, "apply_chat_template"):
