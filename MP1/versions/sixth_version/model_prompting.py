@@ -108,9 +108,12 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
             if len(parts) >= 2:
                 response_processed = parts[1]
 
+        # Remove any leading/trailing whitespace
+        response_processed = response_processed.strip()
+
         # Split into lines for processing
         lines = response_processed.split('\n')
-        seen_first_line = False
+        seen_first_def = False
         processed_lines = []
 
         for line in lines:
@@ -118,14 +121,14 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
             if not line.strip():
                 continue
             else:  # Non-empty line
-                if not seen_first_line:
-                    # Drop def if it's on the first line
+                if not seen_first_def:
+                    # Drop first def
                     if line.strip().startswith('def '):
-                        seen_first_line = True
+                        seen_first_def = True
                         continue
+                    # Push everything before inside the function (with 4-space indentation)
                     else:
-                        seen_first_line = True
-                        line = line
+                        line = '    ' + line.lstrip()
                 else: # Ensure proper indentation (4-space increments)
                     # Count existing indentation
                     leading_spaces = len(line) - len(line.lstrip())

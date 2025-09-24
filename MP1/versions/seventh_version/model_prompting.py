@@ -121,11 +121,10 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
                 if not seen_first_line:
                     # Drop def if it's on the first line
                     if line.strip().startswith('def '):
-                        seen_first_line = True
                         continue
                     else:
-                        seen_first_line = True
                         line = line
+                    seen_first_line = True
                 else: # Ensure proper indentation (4-space increments)
                     # Count existing indentation
                     leading_spaces = len(line) - len(line.lstrip())
